@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShiwuzhaolingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShiwuzhaolingEntity" id="shiwuzhaolingMap">
+        <result property="biaoti" column="biaoti"/>
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="wupintupian" column="wupintupian"/>
+        <result property="shidedizhi" column="shidedizhi"/>
+        <result property="shideshijian" column="shideshijian"/>
+        <result property="renlingdizhi" column="renlingdizhi"/>
+        <result property="fabushijian" column="fabushijian"/>
+        <result property="wupinmiaoshu" column="wupinmiaoshu"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shouji" column="shouji"/>
+        <result property="suguanzhanghao" column="suguanzhanghao"/>
+        <result property="suguanxingming" column="suguanxingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShiwuzhaolingVO" >
+		SELECT * FROM shiwuzhaoling  shiwuzhaoling         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShiwuzhaolingVO" >
+		SELECT  shiwuzhaoling.* FROM shiwuzhaoling  shiwuzhaoling 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShiwuzhaolingView" >
+
+		SELECT  shiwuzhaoling.* FROM shiwuzhaoling  shiwuzhaoling 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShiwuzhaolingView" >
+		SELECT * FROM shiwuzhaoling  shiwuzhaoling <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

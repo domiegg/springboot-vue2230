@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KoulingmaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KoulingmaEntity" id="koulingmaMap">
+        <result property="biaoti" column="biaoti"/>
+        <result property="koulingma" column="koulingma"/>
+        <result property="neirong" column="neirong"/>
+        <result property="tongzhishijian" column="tongzhishijian"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="sushehao" column="sushehao"/>
+        <result property="chuangweihao" column="chuangweihao"/>
+        <result property="suguanzhanghao" column="suguanzhanghao"/>
+        <result property="suguanxingming" column="suguanxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KoulingmaVO" >
+		SELECT * FROM koulingma  koulingma         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KoulingmaVO" >
+		SELECT  koulingma.* FROM koulingma  koulingma 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KoulingmaView" >
+
+		SELECT  koulingma.* FROM koulingma  koulingma 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KoulingmaView" >
+		SELECT * FROM koulingma  koulingma <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

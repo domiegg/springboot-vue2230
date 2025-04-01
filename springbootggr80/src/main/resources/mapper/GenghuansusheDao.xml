@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GenghuansusheDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GenghuansusheEntity" id="genghuansusheMap">
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="yuansushehao" column="yuansushehao"/>
+        <result property="xinsushehao" column="xinsushehao"/>
+        <result property="genghuanriqi" column="genghuanriqi"/>
+        <result property="genghuanyuanyin" column="genghuanyuanyin"/>
+        <result property="suguanzhanghao" column="suguanzhanghao"/>
+        <result property="suguanxingming" column="suguanxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GenghuansusheVO" >
+		SELECT * FROM genghuansushe  genghuansushe         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GenghuansusheVO" >
+		SELECT  genghuansushe.* FROM genghuansushe  genghuansushe 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GenghuansusheView" >
+
+		SELECT  genghuansushe.* FROM genghuansushe  genghuansushe 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GenghuansusheView" >
+		SELECT * FROM genghuansushe  genghuansushe <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

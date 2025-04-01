@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SushewupinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.SushewupinEntity" id="sushewupinMap">
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="wupinleibie" column="wupinleibie"/>
+        <result property="wupinsuoshu" column="wupinsuoshu"/>
+        <result property="suochuweizhi" column="suochuweizhi"/>
+        <result property="wupinshuliang" column="wupinshuliang"/>
+        <result property="dangqianzhuangtai" column="dangqianzhuangtai"/>
+        <result property="shiyongzhuangtai" column="shiyongzhuangtai"/>
+        <result property="dangqianshiyongren" column="dangqianshiyongren"/>
+        <result property="shiyongrensushehao" column="shiyongrensushehao"/>
+        <result property="loudonghao" column="loudonghao"/>
+        <result property="dengjiriqi" column="dengjiriqi"/>
+        <result property="wupinjianjie" column="wupinjianjie"/>
+        <result property="suguanzhanghao" column="suguanzhanghao"/>
+        <result property="suguanxingming" column="suguanxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.SushewupinVO" >
+		SELECT * FROM sushewupin  sushewupin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.SushewupinVO" >
+		SELECT  sushewupin.* FROM sushewupin  sushewupin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.SushewupinView" >
+
+		SELECT  sushewupin.* FROM sushewupin  sushewupin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.SushewupinView" >
+		SELECT * FROM sushewupin  sushewupin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
